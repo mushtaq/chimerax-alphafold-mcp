@@ -3,6 +3,7 @@
 ChimeraX-AlphaFold-MCP connects ChimeraX and its AlphaFold Tool to Claude AI through the Model Context Protocol (MCP), enabling Claude to directly interact with and control PyMOL. This powerful integration allows for conversational structural biology, molecular visualization, and structure prediction and analysis capabilities through natural language.
 
 
+[Uploading 0402.mp4.zip…]()
 
 
 ## Features
