@@ -43,6 +43,8 @@ code --add-mcp "{\"name\":\"chimerax-alphafold\",\"command\":\"uvx\",\"args\":[\
 
 ## Usage
 
+### Claude CLI
+
 Once configured, start a Claude CLI session:
 
 ```bash
@@ -57,3 +59,15 @@ Then ask Claude to perform ChimeraX tasks using natural language:
 - "Search for kinase structures in the PDB"
 - "Fetch the AlphaFold structure for UniProt ID P04637"
 - "Color the protein by secondary structure and save a high-res image"
+
+### VS Code Agent Chat
+
+In VS Code, explicitly mention the MCP server for better results:
+
+**Example commands:**
+- "Using the chimerax-alphafold MCP server, load PDB structure 1UBQ and display it as cartoon"
+- "Use the chimerax-alphafold server to predict the structure of this protein sequence: MKFLVL..."
+- "With chimerax-alphafold, search for kinase structures in the PDB"
+- "Use chimerax-alphafold to fetch the AlphaFold structure for UniProt ID P04637"
+
+**Verify setup:** Check Extensions view (⇧⌘X) > MCP SERVERS section for connected status.
