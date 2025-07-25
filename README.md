@@ -16,21 +16,44 @@ uvx --from git+https://github.com/mushtaq/chimerax-alphafold-mcp chimerax-mcp
 
 In ChimeraX command line:
 ```bash
-remotecontrol rest start
+remotecontrol rest start port 63269
 ```
 
 ### 2. Configure Claude Code
 
-Add to MCP settings:
-
 ```bash
-claude code mcp add chimerax-alphafold uvx --from git+https://github.com/mushtaq/chimerax-alphafold-mcp chimerax-mcp
+# Add MCP server
+claude mcp add chimerax-alphafold -- uvx --from git+https://github.com/mushtaq/chimerax-alphafold-mcp chimerax-mcp
+
+# List configured servers
+claude mcp list
+
+# Remove server (if needed)
+claude mcp remove chimerax-alphafold
 ```
 
 ### 3. Configure VS Code
 
-Install the MCP extension and add the server:
+```bash
+# Add MCP server
+code --add-mcp "{\"name\":\"chimerax-alphafold\",\"command\":\"uvx\",\"args\":[\"--from\",\"git+https://github.com/mushtaq/chimerax-alphafold-mcp\",\"chimerax-mcp\"]}"
+
+# List/remove servers: Use VS Code UI (Extensions > MCP SERVERS section)
+```
+
+## Usage
+
+Once configured, start a Claude CLI session:
 
 ```bash
-code --add-mcp "{\"name\":\"chimerax-alphafold\",\"command\":\"uvx\",\"args\":[\"--from\",\"git+https://github.com/mushtaq/chimerax-alphafold-mcp\",\"chimerax-mcp\"]}"
+claude
 ```
+
+Then ask Claude to perform ChimeraX tasks using natural language:
+
+**Example commands:**
+- "Load PDB structure 1UBQ and display it as cartoon"
+- "Use AlphaFold to predict the structure of this protein sequence: MKFLVL..."
+- "Search for kinase structures in the PDB"
+- "Fetch the AlphaFold structure for UniProt ID P04637"
+- "Color the protein by secondary structure and save a high-res image"
